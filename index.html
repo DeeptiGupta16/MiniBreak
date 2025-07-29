@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniBreak - Take a moment for yourself</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">MiniBreak</div>
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showPage('home')" class="nav-link">Home</a></li>
+                <li><a href="#" onclick="showPage('mood')" class="nav-link">Mood</a></li>
+                <li><a href="#" onclick="showPage('journal')" class="nav-link">Journal</a></li>
+                <li><a href="#" onclick="showPage('breathing')" class="nav-link">Breathing</a></li>
+                <li><a href="#" onclick="showPage('games')" class="nav-link">Games</a></li>
+                <li><a href="#" onclick="showPage('affirmations')" class="nav-link">Affirmations</a></li>
+                <li><a href="#" onclick="showPage('wellness')" class="nav-link">Wellness</a></li>
+                <li><a href="#" onclick="showPage('feedback')" class="nav-link">Feedback</a></li>
+                <li><a href="#" onclick="showPage('profile')" class="nav-link">Profile</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+        
+        <!-- Starter Page -->
+        <div id="starter-page" class="page active">
+            <div class="starter-section">
+                <h1 class="starter-title">MiniBreak</h1>
+                <p class="starter-subtitle">Take a moment for yourself. Take a MiniBreak.</p>
+                <p class="starter-description">A personal wellness tool to help you relax, reflect, and feel better through mindful practices.</p>
+                <button class="btn-getting-started" onclick="showPage('login')">Getting Started</button>
+            </div>
+        </div>
+
+        <!-- Login Page -->
+        <div id="login-page" class="page">
+            <div class="login-container">
+                <h2 class="login-title">Welcome to MiniBreak</h2>
+                <p class="login-subtitle">Please fill in your details to personalize your wellness journey</p>
+                
+                <form id="login-form" class="login-form">
+                    <div class="input-group">
+                        <label for="user-name">Full Name</label>
+                        <input type="text" id="user-name" name="name" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="user-dob">Date of Birth</label>
+                        <input type="date" id="user-dob" name="dob" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="user-occupation">Occupation</label>
+                        <input type="text" id="user-occupation" name="occupation" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="user-email">Email (Optional)</label>
+                        <input type="email" id="user-email" name="email">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="user-wellness-goal">Wellness Goal</label>
+                        <select id="user-wellness-goal" name="wellnessGoal" required>
+                            <option value="">Select your primary goal</option>
+                            <option value="stress-relief">Stress Relief</option>
+                            <option value="better-sleep">Better Sleep</option>
+                            <option value="anxiety-management">Anxiety Management</option>
+                            <option value="mindfulness">Mindfulness & Meditation</option>
+                            <option value="emotional-balance">Emotional Balance</option>
+                            <option value="daily-motivation">Daily Motivation</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Start Your Journey</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Home Page -->
+        <div id="home-page" class="page">
+            <div class="hero-section">
+                <h1 class="hero-title">MiniBreak</h1>
+                <p class="hero-subtitle">Take a moment for yourself. Take a MiniBreak.</p>
+                <p class="hero-description">A personal wellness tool to help you relax, reflect, and feel better through mindful practices.</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card" onclick="showPage('mood')">
+                        <div class="feature-icon">😊</div>
+                        <h3>Mood Tracker</h3>
+                        <p>Track your emotions and see patterns over time</p>
+                    </div>
+                    <div class="feature-card" onclick="showPage('journal')">
+                        <div class="feature-icon">📝</div>
+                        <h3>Journal</h3>
+                        <p>Write down your thoughts and reflect on your day</p>
+                    </div>
+                    <div class="feature-card" onclick="showPage('breathing')">
+                        <div class="feature-icon">🧘</div>
+                        <h3>Breathing</h3>
+                        <p>Guided breathing exercises for relaxation</p>
+                    </div>
+                    <div class="feature-card" onclick="showPage('games')">
+                        <div class="feature-icon">🎮</div>
+                        <h3>Mini Games</h3>
+                        <p>Light, calming games for mental breaks</p>
+                    </div>
+                    <div class="feature-card" onclick="showPage('affirmations')">
+                        <div class="feature-icon">✨</div>
+                        <h3>Affirmations</h3>
+                        <p>Positive messages to brighten your day</p>
+                    </div>
+                    <div class="feature-card" onclick="showPage('profile')">
+                        <div class="feature-icon">👤</div>
+                        <h3>Profile</h3>
+                        <p>View your wellness journey and progress</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mood Tracker Page -->
+        <div id="mood-page" class="page">
+            <div class="page-content">
+                <h2 class="page-title">How are you feeling today?</h2>
+                <p class="page-subtitle">Select your current mood</p>
+                
+                <div class="mood-selector">
+                    <div class="mood-option" onclick="selectMood('happy', '😊')">
+                        <div class="mood-emoji">😊</div>
+                        <span>Happy</span>
+                    </div>
+                    <div class="mood-option" onclick="selectMood('sad', '😞')">
+                        <div class="mood-emoji">😞</div>
+                        <span>Sad</span>
+                    </div>
+                    <div class="mood-option" onclick="selectMood('angry', '😠')">
+                        <div class="mood-emoji">😠</div>
+                        <span>Angry</span>
+                    </div>
+                    <div class="mood-option" onclick="selectMood('calm', '😌')">
+                        <div class="mood-emoji">😌</div>
+                        <span>Calm</span>
+                    </div>
+                    <div class="mood-option" onclick="selectMood('excited', '🤗')">
+                        <div class="mood-emoji">🤗</div>
+                        <span>Excited</span>
+                    </div>
+                    <div class="mood-option" onclick="selectMood('anxious', '😰')">
+                        <div class="mood-emoji">😰</div>
+                        <span>Anxious</span>
+                    </div>
+                </div>
+
+                <div class="mood-streak">
+                    <div class="streak-card">
+                        <h3>Mood Streak</h3>
+                        <div id="mood-streak-count" class="streak-number">0</div>
+                        <p>consecutive days</p>
+                        <div id="streak-message" class="streak-message"></div>
+                    </div>
+                </div>
+
+                <div class="mood-graph-section">
+                    <h3>Weekly Mood Trends</h3>
+                    <div id="mood-graph" class="mood-graph"></div>
+                    <div id="mood-insights" class="mood-insights"></div>
+                </div>
+
+                <div class="mood-tips-section">
+                    <h3>Mood-Based Tips</h3>
+                    <div id="mood-tips" class="mood-tips"></div>
+                </div>
+
+                <div class="mood-history">
+                    <h3>Recent Mood Entries</h3>
+                    <div id="mood-timeline" class="mood-timeline"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Journal Page -->
+        <div id="journal-page" class="page">
+            <div class="page-content">
+                <h2 class="page-title">Personal Journal</h2>
+                <p class="page-subtitle">Write down your thoughts and feelings</p>
+                
+                <div class="journal-input-section">
+                    <textarea id="journal-input" placeholder="What's on your mind today?" rows="8"></textarea>
+                    <button id="save-journal" class="btn-primary" onclick="saveJournalEntry()">Save Entry</button>
+                </div>
+
+                <div class="journal-entries">
+                    <h3>Previous Entries</h3>
+                    <div id="journal-list" class="journal-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Breathing Exercises Page -->
+        <div id="breathing-page" class="page">
+            <div class="page-content">
+                <h2 class="page-title">Breathing Exercise</h2>
+                <p class="page-subtitle">Choose your breathing pattern and relax</p>
+                
+                <div class="breathing-patterns">
+                    <button class="pattern-btn active" onclick="selectBreathingPattern('basic')">Basic (4-2-4-2)</button>
+                    <button class="pattern-btn" onclick="selectBreathingPattern('box')">Box Breathing (4-4-4-4)</button>
+                    <button class="pattern-btn" onclick="selectBreathingPattern('calm')">4-7-8 Calming</button>
+                </div>
+                
+                <div class="breathing-container">
+                    <div id="breathing-circle" class="breathing-circle">
+                        <div class="breathing-text" id="breathing-text">Click Start</div>
+                    </div>
+                    
+                    <div class="breathing-controls">
+                        <button id="breathing-btn" class="btn-primary" onclick="toggleBreathing()">Start</button>
+                    </div>
+                    
+                    <div class="breathing-instructions">
+                        <div id="pattern-description" class="pattern-description">
+                            <h4>Basic Breathing</h4>
+                            <p>Inhale for 4 seconds, hold for 2, exhale for 4, hold for 2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mini Games Page -->
+        <div id="games-page" class="page">
+            <div class="page-content">
+                <h2 class="page-title">Take a mental pause — play a gentle game</h2>
+                <p class="page-subtitle">Light, calming games to help you relax and unwind</p>
+                
+                <div class="games-container">
+                    <!-- Memory Match Game -->
+                    <div class="game-section">
+                        <div class="game-header">
+                            <h3 class="game-title">🧩 Memory Match</h3>
+                            <p class="game-description">Find matching pairs of peaceful symbols</p>
+                        </div>
+                        
+                        <div class="memory-game">
+                            <div class="memory-board" id="memory-board">
+                                <!-- Memory cards will be generated by JavaScript -->
+                            </div>
+                            <div class="memory-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Moves:</span>
+                                    <span id="memory-moves" class="stat-value">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Pairs:</span>
+                                    <span id="memory-pairs" class="stat-value">0/8</span>
+                                </div>
+                            </div>
+                            <div class="game-controls">
+                                <button onclick="startMemoryGame()" class="btn-game">New Game</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bubble Pop Game -->
+                    <div class="game-section">
+                        <div class="game-header">
+                            <h3 class="game-title">🎇Bubble Pop</h3>
+                            <p class="game-description">Pop colorful bubbles as they float by</p>
+                        </div>
+                        
+                        <div class="bubble-game">
+                            <div class="bubble-canvas" id="bubble-canvas">
+                                <!-- Bubbles will be generated by JavaScript -->
+                            </div>
+                            <div class="bubble-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Score:</span>
+                                    <span id="bubble-score" class="stat-value">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Time:</span>
+                                    <span id="bubble-time" class="stat-value">0s</span>
+                                </div>
+                            </div>
+                            <div class="game-controls">
+                                <button onclick="startBubbleGame()" class="btn-game" id="bubble-btn">Start</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="back-home-section">
+                    <button onclick="showPage('home')" class="btn-secondary">Back to Home</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Affirmations Page -->
+        <div id="affirmations-page" class="page">
+            <div class="page-content">
+                <h2 class="page-title">Daily Affirmations</h2>
+                <p class="page-subtitle">Positive messages to inspire you</p>
+                
+                <div class="affirmation-container">
+                    <div class="affirmation-card">
+                        <div id="affirmation-text" class="affirmation-text">You are enough.</div>
+                        <div class="affirmation-actions">
+                            <button id="favorite-affirmation" class="btn-favorite" onclick="toggleFavoriteAffirmation()">❤️ Save as Favorite</button>
+                            <button id="next-affirmation" class="btn-primary" onclick="getNextAffirmation()">Next Affirmation</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="favorite-affirmations">
+                    <h3>Your Favorite Affirmations</h3>
+                    <div id="favorite-list" class="favorite-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Page -->
+        <div id="profile-page" class="page">
+            <div class="page-content">
+                <h2 class="page-title">Your Wellness Profile</h2>
+                
+                <div class="profile-section">
+                    <div class="profile-header">
+                        <div class="profile-avatar">👤</div>
+                        <div class="profile-info">
+                            <h3 id="profile-name">Wellness Warrior</h3>
+                            <p id="profile-subtitle">Your journey to better mental health</p>
+                            <div class="profile-details">
+                                <p><strong>Age:</strong> <span id="profile-age">--</span></p>
+                                <p><strong>Occupation:</strong> <span id="profile-occupation">--</span></p>
+                                <p><strong>Wellness Goal:</strong> <span id="profile-goal">--</span></p>
+                                <p><strong>Email:</strong> <span id="profile-email">--</span></p>
+                            </div>
+                            <button class="btn-secondary" onclick="editProfile()">Edit Profile</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Mood Stats</h3>
+                        <div id="mood-stats" class="mood-stats"></div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h3>Journal Entries</h3>
+                        <div id="journal-count" class="stat-number">0</div>
+                        <p>entries written</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h3>Favorite Affirmations</h3>
+                        <div id="favorite-count" class="stat-number">0</div>
+                        <p>saved favorites</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h3>Days Active</h3>
+                        <div id="active-days" class="stat-number">0</div>
+                        <p>days using MiniBreak</p>
+                    </div>
+                </div>
+
+                <div class="profile-journals">
+                    <h3>Recent Journal Entries</h3>
+                    <div id="profile-journal-list" class="profile-journal-list"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Wellness Tips Page -->
+        <div id="wellness-page" class="page">
+            <div class="page-content">
+                <h2 class="page-title">Wellness Tips & Education</h2>
+                <p class="page-subtitle">Learn about mental wellness and self-care</p>
+                
+                <div class="wellness-categories">
+                    <button class="category-btn active" onclick="showWellnessCategory('stress')">Stress Management</button>
+                    <button class="category-btn" onclick="showWellnessCategory('sleep')">Better Sleep</button>
+                    <button class="category-btn" onclick="showWellnessCategory('mindfulness')">Mindfulness</button>
+                    <button class="category-btn" onclick="showWellnessCategory('anxiety')">Anxiety Relief</button>
+                </div>
+                
+                <div id="wellness-content" class="wellness-content">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Page -->
+        <div id="feedback-page" class="page">
+            <div class="page-content">
+                <h2 class="page-title">Share Your Feedback</h2>
+                <p class="page-subtitle">Help us improve MiniBreak with your thoughts and suggestions</p>
+                
+                <div class="feedback-form-container">
+                    <form id="feedback-form" class="feedback-form">
+                        <div class="input-group">
+                            <label for="feedback-name">Your Name</label>
+                            <input type="text" id="feedback-name" name="name" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="feedback-rating">How would you rate MiniBreak?</label>
+                            <div class="emoji-rating">
+                                <button type="button" class="emoji-btn" data-rating="1" onclick="selectRating(1)">😞</button>
+                                <button type="button" class="emoji-btn" data-rating="2" onclick="selectRating(2)">😐</button>
+                                <button type="button" class="emoji-btn" data-rating="3" onclick="selectRating(3)">🙂</button>
+                                <button type="button" class="emoji-btn" data-rating="4" onclick="selectRating(4)">😊</button>
+                                <button type="button" class="emoji-btn" data-rating="5" onclick="selectRating(5)">🤩</button>
+                            </div>
+                            <input type="hidden" id="feedback-rating" name="rating" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="feedback-message">Your Message</label>
+                            <textarea id="feedback-message" name="message" rows="5" placeholder="Share your thoughts, suggestions, or experiences with MiniBreak..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">Submit Feedback</button>
+                    </form>
+                </div>
+                
+                <div class="feedback-display">
+                    <h3>Community Feedback</h3>
+                    <div id="feedback-list" class="feedback-list">
+                        <!-- Feedback entries will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Made with ❤️ by Deepti Gupta</p>
+            <div class="footer-links">
+                <span>📧 Email: deepti1615@gmail.com</span>
+                <span>🔗 LinkedIn: <a href="https://www.linkedin.com/in/deeptigupta_16" target="_blank">https://www.linkedin.com/in/yourprofile</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
