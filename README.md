@@ -63,7 +63,7 @@ minibreak/
 ## 🌐 Live Demo
 
 If deployed to GitHub Pages, your live site will be here:  
-👉 [https://deepti-gupta.github.io/minibreak/](https://deepti-gupta.github.io/minibreak/)
+👉(https://deeptigupta16.github.io/MiniBreak/)
 
 ---
 
